@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Define your beans here -->
+    
+    <!-- define the dependency -->
+    <bean id="myFortuneService"
+    		class="com.cmx.kiryushin.test.learn.HappyFortuneService">
+    </bean>
+    
+    
+ 	<bean id="myCoach"
+ 		class="com.cmx.kiryushin.test.learn.SoccerCoach">		
+ 		<!-- set up constructor injection с
+ 		помощью XML передали в качестве аргумента для создания класса
+ 		параметр из HappyFortuneService т.о. при создании класса
+ 		будет осуществленно внедрение функционала через конструктор -->
+ 		<constructor-arg ref="myFortuneService" />
+ 	</bean>
+ 	
+ 	<bean id="myCricketCoach" 
+ 		class="com.cmx.kiryushin.test.learn.CricketCoach">
+ 	
+ 		<!-- setter injection
+ 			через property обращаемся к сеттеру метода
+ 		 -->
+ 		<property name="fortuneService" ref="myFortuneService"/>
+ 		<property name="email" value="test@mail.com"/>
+ 		<property name="team" value = "Sunrise"/>
+ 		
+ 		
+ 	</bean>
+ 	
+ 	
+    
+</beans>
+
+
+
+
+
