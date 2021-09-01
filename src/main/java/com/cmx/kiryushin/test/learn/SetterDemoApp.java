@@ -6,7 +6,7 @@ public class SetterDemoApp {
 	public static void main(String[] args) {
 		// загрузка конфигурации XML
 		ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("application.xml");
+				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// получаем бин базиру€сь на xml id и классе 
 		/*

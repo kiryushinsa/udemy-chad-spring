@@ -7,7 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<context:property-placeholder location="classpath:sport.properties"/>
+
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
@@ -32,8 +33,8 @@
  			через property обращаемся к сеттеру метода
  		 -->
  		<property name="fortuneService" ref="myFortuneService"/>
- 		<property name="email" value="test@mail.com"/>
- 		<property name="team" value = "Sunrise"/>
+ 		<property name="email" value="${sport.email}"/>
+ 		<property name="team" value = "${sport.team}"/>
  		
  		
  	</bean>

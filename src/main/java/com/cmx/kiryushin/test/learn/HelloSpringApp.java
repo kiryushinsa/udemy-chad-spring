@@ -8,7 +8,7 @@ public class HelloSpringApp {
 
 		// load the spring configuration file
 		ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("application.xml");
+				new ClassPathXmlApplicationContext("applicationContext.xml");
 				
 		// retrieve bean from spring container
 		
@@ -17,7 +17,7 @@ public class HelloSpringApp {
 		 * Coach.java - базовый интерфейс для всех видов тренеров
 		 * myCoach - делает (делал) ссылку на TrackCoach т.о. создается связь и 
 		 * при вызове методов бина вызываются методы TrackCoach.
-		 * Демонстрация внедрения зависимости через XML (application.xml)
+		 * Демонстрация внедрения зависимости через XML (applicationContext.xml)
 		 * */
 		Coach theCoach = context.getBean("myCoach", Coach.class);
 		
