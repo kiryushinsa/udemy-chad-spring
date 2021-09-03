@@ -1,4 +1,4 @@
-package com.cmx.kiryushin.test.learn;
+package com.kiryushin.test.learn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
