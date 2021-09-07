@@ -1,4 +1,4 @@
-package com.kiryushin.test.learn;
+package com.kiryushin.test.learn.coach;
 
 public interface Coach {
 

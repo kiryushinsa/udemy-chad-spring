@@ -1,4 +1,6 @@
-package com.kiryushin.test.learn;
+package com.kiryushin.test.learn.coach;
+
+import com.kiryushin.test.learn.service.FortuneService;
 
 public class CricketCoach implements Coach{
 

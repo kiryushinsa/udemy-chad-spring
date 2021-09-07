@@ -13,12 +13,12 @@
     
     <!-- define the dependency -->
     <bean id="myFortuneService"
-    		class="com.kiryushin.test.learn.HappyFortuneService">
+    		class="com.kiryushin.test.learn.service.HappyFortuneService">
     </bean>
     
     
  	<bean id="myCoach"
- 		class="com.kiryushin.test.learn.SoccerCoach">
+ 		class="com.kiryushin.test.learn.coach.SoccerCoach">
  		<!-- set up constructor injection с
  		помощью XML передали в качестве аргумента для создания класса
  		параметр из HappyFortuneService т.о. при создании класса
@@ -27,7 +27,7 @@
  	</bean>
  	
  	<bean id="myCricketCoach" 
- 		class="com.kiryushin.test.learn.CricketCoach">
+ 		class="com.kiryushin.test.learn.coach.CricketCoach">
  	
  		<!-- setter injection
  			через property обращаемся к сеттеру метода

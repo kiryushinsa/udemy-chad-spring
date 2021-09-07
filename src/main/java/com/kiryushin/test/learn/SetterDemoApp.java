@@ -1,5 +1,6 @@
 package com.kiryushin.test.learn;
 
+import com.kiryushin.test.learn.coach.CricketCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SetterDemoApp {
