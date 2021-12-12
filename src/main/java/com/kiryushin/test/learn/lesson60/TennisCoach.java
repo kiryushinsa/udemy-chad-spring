@@ -1,11 +1,14 @@
 package com.kiryushin.test.learn.lesson60;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Component
 public class TennisCoach implements Coach {
 
+	// qualifier - set concrete bean for injection
+	@Qualifier("randomFortuneService")
 	//field injection
 	@Autowired
 	private FortuneService fortuneService;
