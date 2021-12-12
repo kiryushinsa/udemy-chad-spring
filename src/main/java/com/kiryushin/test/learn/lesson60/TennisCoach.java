@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	// qualifier - set concrete bean for injection
@@ -18,6 +20,19 @@ public class TennisCoach implements Coach {
 	TennisCoach(){
 		System.out.println(">>>inside default constructor");
 	}
+
+	//define init method
+	@PostConstruct
+	public void doStartupStaff() {
+		System.out.println(">> inside Tennis.Coach: do StartupStaff");
+	}
+
+	@PreDestroy
+	public void doDestroyStaff() {
+		System.out.println(">> unside TennisCoach: do DestroyStaff");
+	}
+
+	//define destroy method
 
 	/*
 	// field injection. you can use any name
