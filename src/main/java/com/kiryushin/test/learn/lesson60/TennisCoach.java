@@ -1,10 +1,12 @@
 package com.kiryushin.test.learn.lesson60;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	// qualifier - set concrete bean for injection
