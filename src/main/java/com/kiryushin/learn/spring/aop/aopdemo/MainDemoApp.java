@@ -18,7 +18,12 @@ public class MainDemoApp {
 
         //call method
         accountDAO.addAccount();
+        accountDAO.get();
+        accountDAO.set();
+
         membershipDAO.addMainAccount();
+        membershipDAO.set();
+        membershipDAO.getD("d");
 
         //close context
         context.close();
