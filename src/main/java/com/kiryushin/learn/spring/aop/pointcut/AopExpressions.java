@@ -13,7 +13,10 @@ import org.aspectj.lang.annotation.Pointcut;
 public class AopExpressions {
 
     @Pointcut("execution(public void add*())")
-    public void forDaoPackage() {}
+    public void forAllAddMethods() {}
+
+    @Pointcut("execution(public void add*(..))")
+    public void forAllAddMethodsWithArguments() {}
 
     //pointcut matching all getters in package dao
     @Pointcut ("execution(* com.kiryushin.learn.spring.aop.dao.*.get*(..))")
@@ -23,6 +26,6 @@ public class AopExpressions {
     @Pointcut ("execution(* com.kiryushin.learn.spring.aop.dao.*.set*(..))")
     public void setters(){}
 
-    @Pointcut ("forDaoPackage() && !( getters() || setters() )")
+    @Pointcut ("forAllAddMethods() && !( getters() || setters() )")
     public void dontSettersOthers() {}
 }

@@ -9,6 +9,10 @@ public class AccountDAO {
         System.out.println(getClass() + " doing work addAccount in AccountDAO");
     }
 
+    public void addAccount(Account account, boolean flag) {
+        System.out.println(getClass() + " doing work addAccount in AccountDAO");
+    }
+
     public void set() {
         System.out.println(getClass() + " SETTER addAccount in AccountDAO");
     }

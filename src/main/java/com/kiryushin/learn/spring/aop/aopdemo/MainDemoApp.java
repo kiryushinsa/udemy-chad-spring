@@ -1,5 +1,6 @@
 package com.kiryushin.learn.spring.aop.aopdemo;
 
+import com.kiryushin.learn.spring.aop.dao.Account;
 import com.kiryushin.learn.spring.aop.dao.AccountDAO;
 import com.kiryushin.learn.spring.aop.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -17,8 +18,8 @@ public class MainDemoApp {
 
 
         //call method
-        accountDAO.addAccount();
-        membershipDAO.addMainAccount();
+        Account account = new Account(1, "John");
+        accountDAO.addAccount(account,false);
 
 
         //close context

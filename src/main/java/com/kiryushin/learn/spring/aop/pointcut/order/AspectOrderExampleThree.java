@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class AspectOrderExampleThree {
 
-    @Before("com.kiryushin.learn.spring.aop.pointcut.AopExpressions.forDaoPackage()")
+    @Before("com.kiryushin.learn.spring.aop.pointcut.AopExpressions.forAllAddMethods()")
     private void exampleOrder3() {
         System.out.println("\n EXAMPLE ORDER 3");
     }
