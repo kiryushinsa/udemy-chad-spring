@@ -12,6 +12,9 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class AopExpressions {
 
+    @Pointcut("execution(public * *(..))")
+    public void forAllMethods() {}
+
     @Pointcut("execution(public void add*())")
     public void forAllAddMethods() {}
 

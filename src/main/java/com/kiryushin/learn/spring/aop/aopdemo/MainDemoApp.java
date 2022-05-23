@@ -5,6 +5,8 @@ import com.kiryushin.learn.spring.aop.dao.AccountDAO;
 import com.kiryushin.learn.spring.aop.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.List;
+
 public class MainDemoApp {
 
     public static void main(String[] args) {
@@ -17,10 +19,15 @@ public class MainDemoApp {
         MembershipDAO membershipDAO = context.getBean(MembershipDAO.class);
 
 
-        //call method
-        Account account = new Account(1, "John");
-        accountDAO.addAccount(account,false);
-
+        /*
+        * is all works properly because afterReturning
+        * works after returning value
+        * to accountList
+        */
+        List<Account> accountList = accountDAO.findAccounts();
+        System.out.println("\n Main ----");
+        System.out.println(accountList);
+        System.out.println("\n");
 
         //close context
         context.close();
