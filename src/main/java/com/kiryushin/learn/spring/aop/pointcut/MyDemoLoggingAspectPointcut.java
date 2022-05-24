@@ -3,6 +3,7 @@ package com.kiryushin.learn.spring.aop.pointcut;
 
 import com.kiryushin.learn.spring.aop.dao.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -70,6 +71,13 @@ public class MyDemoLoggingAspectPointcut {
 
         System.out.println("\n Exception is: " + exception);
 
+    }
+
+    @After("execution(* com.kiryushin.learn.spring.aop.dao.AccountDAO.findAccounts(..) )")
+    public void afterAll(JoinPoint joinPoint) {
+
+        String method = joinPoint.getSignature().toShortString();
+        System.out.println(" \n ======>>>> Advice works with in @After on method: " + method);
     }
 
 

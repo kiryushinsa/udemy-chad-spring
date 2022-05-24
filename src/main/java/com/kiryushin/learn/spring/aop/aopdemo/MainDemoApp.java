@@ -20,7 +20,7 @@ public class MainDemoApp {
         List<Account> accountList = null;
 
         try {
-            boolean tripWire = true;
+            boolean tripWire = false;
             accountDAO.findAccounts(tripWire);
         } catch (Exception e) {
             System.out.println("\n Caught exception in {try catch}: " + e);
