@@ -16,18 +16,17 @@ public class MainDemoApp {
 
         //get bean
         AccountDAO accountDAO = context.getBean( AccountDAO.class);
-        MembershipDAO membershipDAO = context.getBean(MembershipDAO.class);
+
+        List<Account> accountList = null;
+
+        try {
+            boolean tripWire = true;
+            accountDAO.findAccounts(tripWire);
+        } catch (Exception e) {
+            System.out.println("\n Caught exception in {try catch}: " + e);
+        }
 
 
-        /*
-        * is all works properly because afterReturning
-        * works after returning value
-        * to accountList
-        */
-        List<Account> accountList = accountDAO.findAccounts();
-        System.out.println("\n Main ----");
-        System.out.println(accountList);
-        System.out.println("\n");
 
         //close context
         context.close();

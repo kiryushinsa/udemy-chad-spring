@@ -8,7 +8,11 @@ import java.util.List;
 @Component
 public class AccountDAO {
 
-    public List<Account> findAccounts() {
+    public List<Account> findAccounts(boolean tripWire) {
+
+        if(tripWire) {
+            throw new RuntimeException("Yeps is runtime exception!)");
+        }
 
         List<Account> myAccounts = new ArrayList<>();
 
