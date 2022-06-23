@@ -11,7 +11,7 @@
 
 	<properties>
 		<springframework.version>5.3.20</springframework.version>
-
+		<springsecurity.version>5.7.2</springsecurity.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -23,6 +23,20 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springframework.version}</version>
+		</dependency>
+
+		<!-- Spring Security  -->
+		<!-- spring security and spring security config -->
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-web</artifactId>
+		  <version>5.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>5.7.1</version>
 		</dependency>
 
 		<!-- Servlet, JSP and JSTL support -->
