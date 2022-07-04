@@ -30,7 +30,8 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                     .loginPage("/loginPage") // адрес endpoint формы-ввода логина-пароля
                     .loginProcessingUrl("/authenticateUser") // форма(endpoint) для отображения после аутентификация
-                    .permitAll(); // каждый должен быть авторизован
+                    .permitAll() // каждый должен быть авторизован
+                    .and().logout().permitAll();
         
     }
     
