@@ -10,7 +10,7 @@ public class LoginController {
     @GetMapping("/loginPage")
     public String showLoginPage() {
         
-        return "login-form";
+        return "bootstrap-login-form";
     }
     
 }
