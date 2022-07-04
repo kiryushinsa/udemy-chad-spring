@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -10,6 +11,15 @@
         <h2>
             Welcome to introduction in Spring Security
         </h2>
+
+        <hr>
+            <p>
+                USER: <security:authentication property="principal.username" />
+                <br>
+                ROLE: <security:authentication property="principal.authorities" />
+            </p>
+        <hr>
+
         <hr>
             Double welcome home page
 
