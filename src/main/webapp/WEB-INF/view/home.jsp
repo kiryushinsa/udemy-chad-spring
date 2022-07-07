@@ -19,6 +19,22 @@
                 ROLE: <security:authentication property="principal.authorities" />
             </p>
         <hr>
+            <!-- Link to /leaders will be output only for users with MANAGER role -->
+            <security:authorize access="hasRole('MANAGER')">
+                <p>
+                    <a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a>
+                    (Only for managers)
+                </p>
+            </security:authorize>
+
+            <!-- Link to /systems will be output only for users with ADMIN role -->
+            <security:authorize access="hasRole('ADMIN')">
+                <p>
+                    <a href="${pageContext.request.contextPath}/systems">Admin Console</a>
+                    (Only for admins)
+                </p>
+            </security:authorize>
+
 
         <hr>
             Double welcome home page

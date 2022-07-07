@@ -17,21 +17,24 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
         
         auth.inMemoryAuthentication()
                 .withUser(users.username("john").password("test").roles("EMPLOYEE"))
-                .withUser(users.username("cate").password("cat").roles("MANAGER"))
-                .withUser(users.username("admin").password("admin").roles("ADMIN","MANAGER"));
+                .withUser(users.username("cate").password("cat").roles("EMPLOYEE","MANAGER"))
+                .withUser(users.username("admin").password("admin").roles("ADMIN","MANAGER","EMPLOYEE"));
     }
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .anyRequest()
-                .authenticated()
+                .antMatchers("/").hasRole("EMPLOYEE")
+                .antMatchers("/leaders/**").hasRole("MANAGER")
+                .antMatchers("/systems/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
                     .loginPage("/loginPage") // адрес endpoint формы-ввода логина-пароля
                     .loginProcessingUrl("/authenticateUser") // форма(endpoint) для отображения после аутентификация
                     .permitAll() // каждый должен быть авторизован
-                    .and().logout().permitAll();
+                    .and().logout().permitAll()
+                    .and()
+                    .exceptionHandling().accessDeniedPage("/access-denied");
         
     }
     

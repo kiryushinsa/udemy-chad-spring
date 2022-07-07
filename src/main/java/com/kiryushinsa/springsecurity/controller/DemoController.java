@@ -12,4 +12,19 @@ public class DemoController {
         return "home";
     }
     
+    // add reaquest mappint for leaders
+    @GetMapping("/leaders")
+    public String showLeaders() {
+    
+        return "leaders";
+    }
+    
+    
+    // add reaquest mappint for leaders
+    @GetMapping("/systems")
+    public String showSystems() {
+        
+        return "systems";
+    }
+    
 }
