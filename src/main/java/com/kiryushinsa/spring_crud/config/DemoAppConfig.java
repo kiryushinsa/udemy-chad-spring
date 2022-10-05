@@ -43,7 +43,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 
 		// set the jdbc driver
 		try {
-			myDataSource.setDriverClass("com.mysql.jdbc.Driver");		
+			myDataSource.setDriverClass("org.postgresql.Driver");
 		}
 		catch (PropertyVetoException exc) {
 			throw new RuntimeException(exc);

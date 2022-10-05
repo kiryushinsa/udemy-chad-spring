@@ -53,11 +53,13 @@
 		</dependency>
 
 		<!-- MySQL -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.connector.version}</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.4.1</version>
 		</dependency>
+
 
 		<!-- C3PO -->
 		<dependency>
