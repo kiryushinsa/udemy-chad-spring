@@ -11,6 +11,12 @@ public class BasicRestController {
     @GetMapping("/")
     public String helloWorldMethod() {
 
-        return "Hello World. Time on server is " + LocalDateTime.now();
+        return "Hello World! Time on server is " + LocalDateTime.now();
+    }
+
+    @GetMapping("/based")
+    public String workout() {
+
+        return "Workout World! Time on server is " + LocalDateTime.now();
     }
 }
