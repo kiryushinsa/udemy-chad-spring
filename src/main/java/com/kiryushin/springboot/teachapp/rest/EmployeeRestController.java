@@ -1,6 +1,6 @@
 package com.kiryushin.springboot.teachapp.rest;
 
-import com.kiryushin.springboot.teachapp.dao.EmployeeDao;
+
 import com.kiryushin.springboot.teachapp.entity.Employee;
 import com.kiryushin.springboot.teachapp.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
