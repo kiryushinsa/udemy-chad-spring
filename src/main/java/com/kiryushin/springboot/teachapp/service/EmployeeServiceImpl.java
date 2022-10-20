@@ -3,6 +3,7 @@ package com.kiryushin.springboot.teachapp.service;
 import com.kiryushin.springboot.teachapp.dao.EmployeeDao;
 import com.kiryushin.springboot.teachapp.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -13,7 +14,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeDao employeeDao;
 
     @Autowired
-    public EmployeeServiceImpl (EmployeeDao employeeDao) {
+    public EmployeeServiceImpl (@Qualifier("employeeDaoJpaImpl") EmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }
 
